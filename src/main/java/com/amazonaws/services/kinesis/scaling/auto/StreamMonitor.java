@@ -360,9 +360,7 @@ public class StreamMonitor implements Runnable {
                     if (!operationMaxCapacity.containsKey(operationType))
                     {
                         operationMaxCapacity.put(operationType, getStreamMaxCapacity(operationType));
-                        LOG.info(String.format("%s : %s Max Capacity is %s", config.getStreamName(), operationType.name(), operationMaxCapacity.get(operationType)));
                     }
-
                     // add the metric name dimension
                     Map<StreamMetric, Map<Datapoint, Double>> metricsMap = getStreamMetricsMap(operationType, cwSampleDuration, metricStartTime, metricEndTime);
 
@@ -386,7 +384,7 @@ public class StreamMonitor implements Runnable {
                     finalScaleDirection = ScaleDirection.DOWN;
                 }
 
-                report = processCloudwatchMetrics(finalScaleDirection, now);
+//                report = processCloudwatchMetrics(finalScaleDirection, now);
 
                 if (report != null) {
                     // refresh the current max capacity after the

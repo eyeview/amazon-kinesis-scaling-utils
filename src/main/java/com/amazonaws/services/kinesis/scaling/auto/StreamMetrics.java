@@ -47,5 +47,10 @@ public class StreamMetrics {
 		return metric;
 	}
 
-
+	@Override
+	public String toString() {
+		return "StreamMetrics{" +
+				"metrics=" + metrics +
+				'}';
+	}
 }
